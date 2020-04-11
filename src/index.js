@@ -1,19 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Container from '@material-ui/core/Container';
-import './index.css';
-import App from './App';
+import { ThemeProvider } from '@material-ui/core/styles';
+// import './index.css';
+import App from './containers/App';
+import theme from './theme';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
     <React.StrictMode>
-        <React.Fragment>
+        <ThemeProvider theme={theme}>
             <CssBaseline />
-            <Container maxWidth="lg">
-                <App />
-            </Container>
-        </React.Fragment>
+            <App />
+        </ThemeProvider>
     </React.StrictMode>,
     document.getElementById('root')
 );
