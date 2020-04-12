@@ -4,6 +4,7 @@ import SearchBox from '../components/SearchBox';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import ErrorBoundry from '../components/ErrorBoundry';
 // import Scroll from './components/Scroll';
 // import { makeStyles } from '@material-ui/core/styles';
 // import Grid from '@material-ui/core/Grid';
@@ -40,7 +41,8 @@ class App extends React.Component {
     componentDidMount() {
         fetch('https://jsonplaceholder.typicode.com/users')
             .then((response) => response.json())
-            .then((users) => this.setState({ robots: users }));
+            .then((users) => this.setState({ robots: users }))
+            .catch(console.error('fetch failed'));
     }
 
     render() {
@@ -66,7 +68,9 @@ class App extends React.Component {
                     <SearchBox searchChange={this.onSearchChange} />
                 </Box>
                 {/* <Scroll> */}
-                <CardList arr={filteredRobots} />
+                <ErrorBoundry>
+                    <CardList arr={filteredRobots} />
+                </ErrorBoundry>
                 {/* </Scroll> */}
             </Container>
         );
