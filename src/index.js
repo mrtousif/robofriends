@@ -1,3 +1,4 @@
+// import './wdyr';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
@@ -10,10 +11,10 @@ import { searchRobots, requestRobots } from './reducers';
 import App from './containers/App';
 import theme from './theme';
 import * as serviceWorker from './serviceWorker';
-
+// eslint-disable-next-line
 const logger = createLogger();
 const rootReducer = combineReducers({ searchRobots, requestRobots });
-const store = createStore(rootReducer, applyMiddleware(reduxThunk, logger));
+const store = createStore(rootReducer, applyMiddleware(reduxThunk /*logger*/));
 
 ReactDOM.render(
     <React.StrictMode>

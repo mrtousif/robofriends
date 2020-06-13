@@ -23,6 +23,8 @@ function CardList(props) {
         );
     });
 
+    console.log('CardList');
+
     return (
         <div>
             <Grid container justify="center" spacing={1}>

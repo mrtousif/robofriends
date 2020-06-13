@@ -16,13 +16,14 @@ const useStyles = makeStyles((theme) => ({
 function SearchBox(props) {
     const { searchChange } = props;
     const classes = useStyles();
+    console.log('SearchBox');
 
     return (
         <form className={classes.root} noValidate>
             <TextField
                 id="filled-basic"
                 label="Search"
-                variant="filled"
+                // variant="filled"
                 color="primary"
                 onChange={searchChange}
             />

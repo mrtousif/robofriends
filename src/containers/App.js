@@ -8,6 +8,7 @@ import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 import ErrorBoundry from '../components/ErrorBoundry';
 import Header from '../components/Header';
+import CounterButton from '../components/CounterButton';
 import { setSearchField, requestRobots } from '../actions';
 
 // import segaFont from '../fonts/SEGA.TTF';
@@ -76,6 +77,7 @@ class App extends React.Component {
             <Container maxWidth="lg">
                 <Box align="center" margin={3}>
                     <Header />
+                    <CounterButton />
                     <SearchBox searchChange={onSearchChange} />
                 </Box>
                 {/* <Scroll> */}
