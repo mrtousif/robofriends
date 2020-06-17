@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
+
 import Box from '@material-ui/core/Box';
 import './App.css';
 import CardList from '../components/CardList';
@@ -11,8 +11,8 @@ import Header from '../components/Header';
 import CounterButton from '../components/CounterButton';
 import { setSearchField, requestRobots } from '../actions';
 
-// import segaFont from '../fonts/SEGA.TTF';
-// import Scroll from '../components/Scroll';
+import Scroll from '../components/Scroll';
+import Loading from '../components/Loading';
 // import { makeStyles } from '@material-ui/core/styles';
 // import Grid from '@material-ui/core/Grid';
 // import Paper from '@material-ui/core/Paper';
@@ -65,27 +65,29 @@ class App extends React.Component {
             return robot.name.toLowerCase().includes(searchField.toLowerCase());
         });
 
-        if (isPending) {
-            return (
-                <Typography variant="h6" color="primary">
-                    Loading..
-                </Typography>
-            );
-        }
+        // if (isPending) {
+        //     return <Typography variant="h6">Loading..</Typography>;
+        // }
 
         return (
-            <Container maxWidth="lg">
+            // <Container maxWidth="xl">
+            <div>
                 <Box align="center" margin={3}>
                     <Header />
                     <CounterButton />
                     <SearchBox searchChange={onSearchChange} />
                 </Box>
-                {/* <Scroll> */}
-                <ErrorBoundry>
-                    <CardList arr={filteredRobots} />
-                </ErrorBoundry>
-                {/* </Scroll> */}
-            </Container>
+                <Scroll>
+                    {isPending ? (
+                        <Loading />
+                    ) : (
+                        <ErrorBoundry>
+                            <CardList arr={filteredRobots} />
+                        </ErrorBoundry>
+                    )}
+                </Scroll>
+            </div>
+            // </Container>
         );
     }
 }

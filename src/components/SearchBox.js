@@ -23,6 +23,7 @@ function SearchBox(props) {
             <TextField
                 id="filled-basic"
                 label="Search"
+                aria-label="Search Robots"
                 // variant="filled"
                 color="primary"
                 onChange={searchChange}
