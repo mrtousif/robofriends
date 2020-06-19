@@ -77,6 +77,7 @@ class App extends React.Component {
                     <CounterButton />
                     <SearchBox searchChange={onSearchChange} />
                 </Box>
+
                 <Scroll>
                     {isPending ? (
                         <Loading />

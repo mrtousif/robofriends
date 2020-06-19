@@ -9,10 +9,10 @@ class CounterButton extends React.Component {
         };
     }
 
-    // shouldComponentUpdate(nextProps, nextState) {
-    //     if (this.state.count !== nextState.count) return true;
-    //     return false;
-    // }
+    shouldComponentUpdate(nextProps, nextState) {
+        if (this.state.count !== nextState.count) return true;
+        return false;
+    }
 
     updateCount = () => {
         this.setState((state) => {
@@ -24,7 +24,7 @@ class CounterButton extends React.Component {
         return (
             <Button
                 variant="contained"
-                color="secondary"
+                color="primary"
                 onClick={this.updateCount}
             >
                 Count: {this.state.count}
