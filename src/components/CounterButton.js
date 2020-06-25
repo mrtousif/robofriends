@@ -23,6 +23,7 @@ class CounterButton extends React.Component {
     render() {
         return (
             <Button
+                id="counter"
                 variant="contained"
                 color="primary"
                 onClick={this.updateCount}
