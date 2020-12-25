@@ -23,7 +23,7 @@ function CardList(props) {
         );
     });
 
-    // console.log('CardList');
+    // console.log(cardList);
 
     return (
         <div>

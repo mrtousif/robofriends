@@ -6,11 +6,13 @@ import { setSearchField, requestRobots } from '../actions';
 
 // send state as props to components
 const mapStateToProps = (state) => {
+    const {robots, isPending, error} = state.requestRobots;
+
     return {
         searchField: state.searchRobots.searchField,
-        robots: state.requestRobots.robots,
-        isPending: state.requestRobots.isPending,
-        error: state.requestRobots.error,
+        robots: robots,
+        isPending: isPending,
+        error: error,
     };
 };
 
