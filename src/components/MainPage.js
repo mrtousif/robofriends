@@ -1,14 +1,12 @@
-import React from 'react';
-// import Container from '@material-ui/core/Container';
-
-import Box from '@material-ui/core/Box';
-import CardList from './CardList';
-import SearchBox from './SearchBox';
-import ErrorBoundry from './ErrorBoundry';
-import Header from './Header';
-import CounterButton from './CounterButton';
-import Scroll from './Scroll';
-import Loading from './Loading';
+import React from "react";
+import Box from "@material-ui/core/Box";
+import CardList from "./CardList";
+import SearchBox from "./SearchBox";
+import ErrorBoundary from "./ErrorBoundary";
+import Header from "./Header";
+import CounterButton from "./CounterButton";
+import Scroll from "./Scroll";
+import Loading from "./Loading";
 
 // import { makeStyles } from '@material-ui/core/styles';
 // import Grid from '@material-ui/core/Grid';
@@ -45,11 +43,7 @@ class App extends React.Component {
 
     render() {
         // const { robots } = this.state;
-        const { onSearchChange, robots, isPending } = this.props;
-
-        // if (isPending) {
-        //     return <Typography variant="h6">Loading..</Typography>;
-        // }
+        const { onSearchChange, isPending } = this.props;
 
         return (
             // <Container maxWidth="xl">
@@ -64,9 +58,9 @@ class App extends React.Component {
                     {isPending ? (
                         <Loading />
                     ) : (
-                        <ErrorBoundry>
+                        <ErrorBoundary>
                             <CardList arr={this.filteredRobots()} />
-                        </ErrorBoundry>
+                        </ErrorBoundary>
                     )}
                 </Scroll>
             </div>
