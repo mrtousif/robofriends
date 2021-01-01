@@ -1,18 +1,19 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import './App.css';
-import MainPage from '../components/MainPage';
-import { setSearchField, requestRobots } from '../actions';
+import React from "react";
+import { connect } from "react-redux";
+import "./App.css";
+import MainPage from "../components/MainPage";
+import { setSearchField, requestRobots } from "../actions";
 
 // send state as props to components
 const mapStateToProps = (state) => {
-    const {robots, isPending, error} = state.requestRobots;
+    const { robots, isPending, error } = state.requestRobots;
+    const { searchField } = state.searchRobots;
 
     return {
-        searchField: state.searchRobots.searchField,
-        robots: robots,
-        isPending: isPending,
-        error: error,
+        searchField,
+        robots,
+        isPending,
+        error,
     };
 };
 

@@ -1,5 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`should not render ErrorBoundry component 1`] = `ShallowWrapper {}`;
-
-exports[`should render ErrorBoundry component 1`] = `undefined`;

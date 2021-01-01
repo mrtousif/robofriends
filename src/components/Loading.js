@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 // import Typography from '@material-ui/core/Typography';
 // import { makeStyles } from '@material-ui/core/styles';
-// import CircularProgress from '@material-ui/core/CircularProgress';
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 // const useStyles = makeStyles((theme) => ({
 //     root: {
@@ -15,11 +15,15 @@ import React from 'react';
 function Loading() {
     // const classes = useStyles();
     return (
-        // <div className={classes.root} /*style={{ justifyContent: 'center' }}*/>
-        //     <CircularProgress />
-        // </div>
-        <div style={{ textAlign: 'center' }}>
-            <h2>Loading...</h2>
+        <div
+            style={{
+                display: "flex",
+                justifyContent: "center",
+                alignSelf: "center",
+                height: "50%",
+            }}
+        >
+            <CircularProgress color="secondary" />
         </div>
     );
 }
